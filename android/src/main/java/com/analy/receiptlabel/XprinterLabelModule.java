@@ -2,8 +2,6 @@ package com.analy.receiptlabel;
 
 import static android.content.Context.BIND_AUTO_CREATE;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -17,33 +15,25 @@ import android.hardware.usb.UsbManager;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.analy.receiptlabel.utils.LabelPosConnect;
 import com.analy.receiptlabel.utils.StringUtils;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.WritableArray;
-import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.module.annotations.ReactModule;
 import com.github.danielfelgar.drawreceiptlib.ReceiptBuilder;
 
 import net.posprinter.IDeviceConnection;
 import net.posprinter.IPOSListener;
-import net.posprinter.POSConst;
-import net.posprinter.POSPrinter;
+import net.posprinter.POSConnect;
 import net.posprinter.TSCConst;
 import net.posprinter.TSCPrinter;
 import net.posprinter.posprinterface.IMyBinder;
 import net.posprinter.service.PosprinterService;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @ReactModule(name = XprinterLabelModule.NAME)
 public class XprinterLabelModule extends ReactContextBaseJavaModule {
@@ -89,7 +79,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
         Log.v(NAME, "RNXNetprinter alloc");
 
         // Try to print with new libs
-        LabelPosConnect.init(this.context);
+        POSConnect.init(this.context);
 
     }
 
@@ -201,7 +191,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             } catch (Exception ex) {
 
             }
-            XprinterLabelModule.curUsbConnectLabelPrinting = LabelPosConnect.createDevice(LabelPosConnect.DEVICE_TYPE_USB);
+            XprinterLabelModule.curUsbConnectLabelPrinting = POSConnect.createDevice(POSConnect.DEVICE_TYPE_USB);
 
             needToReconnect = true;
             usbLabelLastConnectTime = ethernetPrintingTimeNow;
@@ -255,7 +245,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             @Override
             public void onStatus(int i, String s) {
                 switch (i) {
-                    case LabelPosConnect.CONNECT_SUCCESS: {
+                    case POSConnect.CONNECT_SUCCESS: {
                         synchronized (lockPrintingLabelAsync) {
                             doPrintingLabelService(curUsbConnectLabelPrinting, me, lines, labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, promise, true);
                         }
@@ -304,7 +294,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             } catch (Exception ex) {
 
             }
-            XprinterLabelModule.curBluetoothConnectLabelPrinting = LabelPosConnect.createDevice(LabelPosConnect.DEVICE_TYPE_BLUETOOTH);
+            XprinterLabelModule.curBluetoothConnectLabelPrinting = POSConnect.createDevice(POSConnect.DEVICE_TYPE_BLUETOOTH);
 
             needToReconnect = true;
 
@@ -326,7 +316,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             @Override
             public void onStatus(int i, String s) {
                 switch (i) {
-                    case LabelPosConnect.CONNECT_SUCCESS: {
+                    case POSConnect.CONNECT_SUCCESS: {
                         synchronized (lockPrintingLabelAsync) {
                             doPrintingLabelService(curBluetoothConnectLabelPrinting, me, lines, labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, promise, true);
                         }
@@ -375,7 +365,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             } catch (Exception ex) {
 
             }
-            XprinterLabelModule.curEthernetConnectLabelPrinting = LabelPosConnect.createDevice(LabelPosConnect.DEVICE_TYPE_ETHERNET);
+            XprinterLabelModule.curEthernetConnectLabelPrinting = POSConnect.createDevice(POSConnect.DEVICE_TYPE_ETHERNET);
 
             needToReconnect = true;
 
@@ -400,7 +390,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
             @Override
             public void onStatus(int i, String s) {
                 switch (i) {
-                    case LabelPosConnect.CONNECT_SUCCESS: {
+                    case POSConnect.CONNECT_SUCCESS: {
                         synchronized (lockPrintingLabelAsync) {
                             doPrintingLabelService(curEthernetConnectLabelPrinting, me, lines, labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, promise, true);
                         }
