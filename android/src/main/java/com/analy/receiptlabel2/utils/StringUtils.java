@@ -1,4 +1,4 @@
-package com.analy.receiptlabel.utils;
+package com.analy.receiptlabel2.utils;
 import java.io.UnsupportedEncodingException;
 
 public class StringUtils {

@@ -1,4 +1,4 @@
-package com.analy.receiptlabel;
+package com.analy.receiptlabel2;
 import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbEndpoint;

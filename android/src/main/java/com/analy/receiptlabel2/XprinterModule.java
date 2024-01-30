@@ -1,54 +1,15 @@
-package com.analy.receiptlabel;
+package com.analy.receiptlabel2;
 
-import static android.content.Context.BIND_AUTO_CREATE;
-
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.IBinder;
-import android.util.Log;
 
-import com.facebook.react.bridge.Promise;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
-import com.analy.receiptlabel.utils.StringUtils;
-import com.facebook.react.bridge.WritableArray;
-import com.facebook.react.bridge.WritableNativeArray;
-import com.facebook.react.module.annotations.ReactModule;
-import com.github.danielfelgar.drawreceiptlib.ReceiptBuilder;
-
-import net.posprinter.IDeviceConnection;
-import net.posprinter.IPOSListener;
-import net.posprinter.POSConnect;
-import net.posprinter.POSConst;
-import net.posprinter.POSPrinter;
-import net.posprinter.TSCConst;
-import net.posprinter.TSCPrinter;
-import net.posprinter.ZPLPrinter;
-import net.posprinter.posprinterface.IMyBinder;
-import net.posprinter.service.PosprinterService;
-
-import android.hardware.usb.UsbConstants;
+import com.analy.receiptlabel2.utils.StringUtils;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.hardware.usb.UsbDevice;
-import android.hardware.usb.UsbManager;
 
 public class XprinterModule {
 

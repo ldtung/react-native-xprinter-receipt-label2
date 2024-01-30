@@ -1,4 +1,4 @@
-package com.analy.receiptlabel.utils;
+package com.analy.receiptlabel2.utils;
 
 public class PrinterCommands {
   public static final byte HT = 0x9;

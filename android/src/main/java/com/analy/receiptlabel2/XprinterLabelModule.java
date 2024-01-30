@@ -1,4 +1,4 @@
-package com.analy.receiptlabel;
+package com.analy.receiptlabel2;
 
 import static android.content.Context.BIND_AUTO_CREATE;
 
@@ -15,7 +15,7 @@ import android.hardware.usb.UsbManager;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.analy.receiptlabel.utils.StringUtils;
+import com.analy.receiptlabel2.utils.StringUtils;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;

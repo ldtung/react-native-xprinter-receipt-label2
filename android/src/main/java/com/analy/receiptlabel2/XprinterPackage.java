@@ -1,4 +1,4 @@
-package com.analy.receiptlabel;
+package com.analy.receiptlabel2;
 
 import androidx.annotation.NonNull;
 

@@ -1,6 +1,5 @@
-package com.analy.receiptlabel;
+package com.analy.receiptlabel2;
 
-import android.graphics.Color;
 import android.graphics.Paint;
 
 public class PrinterLine {
