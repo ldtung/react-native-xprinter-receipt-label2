@@ -521,6 +521,30 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
         } catch (Exception ex) {
             // Error while printing
             promise.reject("-1", "There is an error while printing " + ex.getMessage());
+        } finally {
+            if (deviceConnection != null) {
+                try {
+                    try {
+                        // Wait for 3 seconds (3000 milliseconds)
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (deviceConnection == curEthernetConnectLabelPrinting) {
+                        curEthernetConnectLabelPrinting.close();
+                        curEthernetConnectLabelPrinting = null;
+                    } else if (deviceConnection == curBluetoothConnectLabelPrinting) {
+                        curBluetoothConnectLabelPrinting.close();
+                        curBluetoothConnectLabelPrinting = null;
+                    } else if (deviceConnection == curUsbConnectLabelPrinting) {
+                        curUsbConnectLabelPrinting.close();
+                        curUsbConnectLabelPrinting = null;
+                    }
+                } catch (Exception ex) {
+                    // donothing
+                }
+            }
+
         }
     }
 }
