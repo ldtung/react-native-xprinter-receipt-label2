@@ -7,8 +7,8 @@
 
 import Foundation
 
-@objc(RNXprinterLabelModule)
-class RNXprinterLabelModule: NSObject {
+@objc(RNXPrinterLabelModule)
+class RNXPrinterLabelModule: NSObject {
   @objc
   func constantsToExport() -> [AnyHashable : Any]! {
     return ["count": 1]
