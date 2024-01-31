@@ -1,14 +1,14 @@
 //
-//  RNXprinterModule.swift
-//  RNXprinterModule
+//  RNXprinterLabelModule.swift
+//  RNXprinterLabelModule
 //
 //  Copyright © 2022 Tam Nguyen. All rights reserved.
 //
 
 import Foundation
 
-@objc(RNXprinterModule)
-class RNXprinterModule: NSObject {
+@objc(RNXprinterLabelModule)
+class RNXprinterLabelModule: NSObject {
   @objc
   func constantsToExport() -> [AnyHashable : Any]! {
     return ["count": 1]

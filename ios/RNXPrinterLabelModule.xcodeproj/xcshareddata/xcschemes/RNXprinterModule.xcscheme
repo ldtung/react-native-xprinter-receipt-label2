@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-               BuildableName = "libRNXprinterModule.a"
-               BlueprintName = "RNXprinterModule"
-               ReferencedContainer = "container:RNXprinterModule.xcodeproj">
+               BuildableName = "libRNXprinterLabelModule.a"
+               BlueprintName = "RNXprinterLabelModule"
+               ReferencedContainer = "container:RNXprinterLabelModule.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-            BuildableName = "libRNXprinterModule.a"
-            BlueprintName = "RNXprinterModule"
-            ReferencedContainer = "container:RNXprinterModule.xcodeproj">
+            BuildableName = "libRNXprinterLabelModule.a"
+            BlueprintName = "RNXprinterLabelModule"
+            ReferencedContainer = "container:RNXprinterLabelModule.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
