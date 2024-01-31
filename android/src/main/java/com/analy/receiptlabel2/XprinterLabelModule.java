@@ -45,7 +45,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
     private static final Object lockBluetoothLabelPrinting = new Object();
     private static final Object lockUsbLabelPrinting = new Object();
     private static final Object lockPrintingLabelAsync = new Object();
-    private static Long differentSecondsToReconnect = 15l;
+    private static Long differentSecondsToReconnect = 9l;
     private static IDeviceConnection curEthernetConnectLabelPrinting = null;
     private static IDeviceConnection curBluetoothConnectLabelPrinting = null;
     private static IDeviceConnection curUsbConnectLabelPrinting = null;
