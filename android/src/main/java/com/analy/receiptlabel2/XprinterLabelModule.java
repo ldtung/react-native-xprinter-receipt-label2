@@ -252,7 +252,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
         if (needToReconnect) {
             doUsbLabelPrintingAndRetry(XprinterLabelModule.curUsbConnectLabelPrinting, promise,
                     labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, lines, me,
-                    usbPathAddress, true, closeAfterPrinted);
+                    usbPathAddress, false, closeAfterPrinted);
         } else {
             // Trigger print now.
             synchronized (lockPrintingLabelAsync) {
@@ -367,7 +367,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
 
         if (needToReconnect) {
             doLabelBluetoothPrintingAndRetry(curBluetoothConnectLabelPrinting, macAddress, promise,
-                    labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, lines, me, true, closeAfterPrinted);
+                    labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop, lines, me, false, closeAfterPrinted);
         } else {
             // Trigger print now.
             synchronized (lockPrintingLabelAsync) {
@@ -453,7 +453,7 @@ public class XprinterLabelModule extends ReactContextBaseJavaModule {
         if (needToReconnect) {
             doLabelTcpPrintingAndRetry(XprinterLabelModule.curEthernetConnectLabelPrinting, ipAddress,
                     promise, labelWidth, labelHeight, labelGap, labelSpaceLeft, labelSpaceTop,
-                    lines, me, true, closeAfterPrinted);
+                    lines, me, false, closeAfterPrinted);
         } else {
             // Trigger print now.
             synchronized (lockPrintingLabelAsync) {
